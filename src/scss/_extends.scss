@@ -1,0 +1,115 @@
+@use '_variables' as *;
+@use '_fonts' as *;
+@use '_functions' as *;
+
+/* headline */
+.h1-hero,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5 {
+    font-family: $font-headline-family;
+    text-transform: uppercase;
+}
+
+.h1-hero {
+    font-size: 4.2rem;
+    line-height: 1.2;
+    font-weight: 500;
+
+    @include tablet {
+        font-size: 7.5rem;
+    }
+}
+
+.h1 {
+    font-size: 2.8rem;
+    line-height: 1.4;
+    font-weight: 500;
+
+    @include tablet {
+        font-size: 4.2rem;
+    }
+}
+
+.h2 {
+    font-size: 2.4rem;
+    line-height: 1.4;
+    font-weight: 500;
+
+    @include tablet {
+        font-size: 3.2rem;
+    }
+}
+
+.h3 {
+    font-size: 1.8rem;
+    line-height: 1.4;
+    font-weight: 500;
+
+    @include tablet {
+        font-size: 2.4rem;
+    }
+}
+
+.h4 {
+    font-size: 1.6rem;
+    line-height: 1.6;
+    font-weight: 500;
+
+    @include tablet {
+        font-size: 1.8rem;
+    }
+}
+
+.h5 {
+
+    font-size: 1.4rem;
+    font-weight: 500;
+
+    @include tablet {
+        font-size: 1.6rem;
+    }
+}
+
+/* body */
+
+.body {
+    &-regular {
+        &-XL {
+            font-size: 1.8rem;
+            line-height: 1.6;
+        }
+
+        &-L {
+
+            font-size: 1.6rem;
+            line-height: 1.6;
+        }
+    }
+}
+
+/* transition */
+
+.transition {
+    transition: all .3s ease-in;
+}
+
+/* text animation */
+
+.text-animation {
+    @extend .transition;
+
+    &:hover {
+        color: $color-text;
+    }
+
+    &:focus {
+        color: $color-stroke-on-dark
+    }
+
+    &:active {
+        color: $color-primary
+    }
+}

@@ -1,0 +1,128 @@
+@use '../_variables' as *;
+@use '../_extends' as *;
+@use '../_icons' as *;
+@use '../_functions' as *;
+
+.btn {
+    display: flex;
+    align-items: center;
+    min-height: 5.6rem;
+    padding: 0 3.2rem;
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+    @extend .transition;
+
+    @include tablet {
+        width: fit-content;
+    }
+
+    &--primary {
+        color: $color-white;
+        border-radius: 3.2rem;
+        background-color: $color-primary;
+        @extend .h5;
+
+        span {
+            margin-left: 1rem;
+        }
+
+        &:hover {
+            background-color: $color-primary-hovered;
+        }
+
+        &:active,
+        &:focus {
+            color: $color-surface-subtle;
+            background-color: $color-primary-clicked;
+        }
+    }
+
+    &--secondary {
+        color: $color-dark;
+        border-radius: 3.2rem;
+        background-color: $color-surface-light;
+        border: 0.1rem solid $color-stroke;
+        @extend .h5;
+
+        &:hover {
+            color: $color-text-on-dark;
+        }
+
+        &:active,
+        &:focus {
+            color: $color-surface-medium;
+            background-color: $color-surface-light;
+        }
+    }
+
+    &--text {
+        @extend .transition;
+
+        &:hover {
+            color: $color-text;
+        }
+
+        &:focus {
+            color: $color-stroke-on-dark
+        }
+
+        &:active {
+            color: $color-primary
+        }
+    }
+}
+
+.slide-controls {
+    display: flex;
+
+    .btn {
+
+        &-prev,
+        &-next {
+            content: '';
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 5.3rem;
+            height: 5.3rem;
+            border-radius: 50%;
+            border: 0.1rem solid $color-dark;
+            color: $color-dark;
+            cursor: pointer;
+            @extend .transition;
+
+            &::after {
+                content: '';
+                position: relative;
+                @extend .craft--arrow-outlined;
+            }
+
+            &:hover {
+                border-color: $color-stroke-on-dark;
+                color: $color-stroke-on-dark;
+            }
+
+            &:focus,
+            &:active {
+                border-color: $color-text-on-dark;
+                color: $color-text-on-dark;
+            }
+
+            &.swiper-button-disabled {
+                opacity: .25;
+                border-color: $color-dark;
+                color: $color-dark;
+                cursor: default;
+            }
+        }
+
+        &-prev {
+            &::after {
+                transform: rotate(180deg);
+            }
+        }
+
+    }
+}

@@ -1,0 +1,35 @@
+@use '../_variables' as *;
+@use '../_extends' as *;
+@use '../functions' as *;
+
+.hero {
+    &__container {
+        display: flex;
+        flex-direction: column;
+        gap: 3rem;
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+
+        .text {
+            max-width: 64.8rem;
+        }
+
+        .head {
+            max-width: 103.8rem;
+        }
+    }
+
+    &__btns {
+        display: flex;
+        gap: 2rem;
+        flex-direction: column;
+
+        @include tablet {
+            flex-direction: row;
+        }
+    }
+}

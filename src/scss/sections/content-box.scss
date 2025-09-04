@@ -1,0 +1,26 @@
+@use '../_variables' as *;
+@use '../_extends' as *;
+
+.content-box {
+    &__container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+    }
+
+    &__content {
+        text-align: center;
+        max-width: 75rem;
+    }
+
+    &__head {
+        text-align: center;
+        max-width: 103.8rem;
+    }
+
+    &__btns {
+        display: flex;
+        gap: 2rem;
+    }
+}

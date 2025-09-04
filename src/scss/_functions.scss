@@ -1,0 +1,72 @@
+@use "sass:math";
+@use "sass:meta";
+@use '_variables' as *;
+
+@function strip-unit($num) {
+  @if meta.type-of($num) == 'number' and not math.is-unitless($num) {
+    @return math.div($num, 1);
+  }
+  @return $num;
+}
+
+/* Przelicza wartość na vw lub vh */
+@function convert-to-rwd($value, $viewport, $rwd) {
+  $number: strip-unit($value);
+  @if $rwd == 'vw' {
+    @return math.div($number, $viewport) * 100vw;
+  }
+  @if $rwd == 'vh' {
+    @return math.div($number, $viewport) * 100vh;
+  }
+  @return $value;
+}
+
+/* Obsługuje tablicę wartości lub pojedynczą wartość */
+@function get-rwd($values, $viewport, $rwd: 'vw') {
+  @if meta.type-of($values) == 'list' {
+    $rwdValues: ();
+    @each $val in $values {
+      $rwdValues: append($rwdValues, convert-to-rwd($val, $viewport, $rwd));
+    }
+    @return $rwdValues;
+  }
+  @return convert-to-rwd($values, $viewport, $rwd);
+}
+/* End */
+
+
+@mixin respond($breakpoint) {
+  @media (min-width: $breakpoint) {
+    @content;
+  }
+}
+
+@mixin only-mobile() {
+  @media (max-width: #{$viewport-phone}px) {
+    @content;
+  }
+}
+
+@mixin tablet() {
+   @media (min-width: #{$viewport-tablet}px) {
+    @content;
+  }
+}
+
+@mixin tablet-md() {
+   @media (min-width: #{$viewport-tablet}px) {
+    @content;
+  }
+}
+
+@mixin desktop-sm() {
+   @media (min-width: #{$viewport-desktop-sm}px) {
+    @content;
+  }
+}
+
+@mixin desktop() {
+   @media (min-width: #{$viewport-desktop}px) {
+    @content;
+  }
+}

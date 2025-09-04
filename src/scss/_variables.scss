@@ -1,0 +1,49 @@
+/* fonts */
+
+$font-headline-family: 'Clash Display', sans-serif;
+$font-body-family: 'Instrument Sans', sans-serif;
+
+/* colors */
+
+$color-primary: #316FAF;
+$color-primary-hovered: #215183;
+$color-primary-clicked: #16395C;
+$color-text: #4D4D4D;
+$color-text-on-dark: #E3E3E3;
+$color-dark: #11273D;
+$color-white: #FFFFFF;
+$color-surface-subtle: #ECF4FA;
+$color-surface-alt: #F6FBFF;
+$color-surface-inner-dark: #3C536A;
+$color-surface-light: #FEFEFE;
+$color-surface-medium: #BFD2E6;
+$gradient-section-soft-fade: linear-gradient(90deg, #FFFFFF, #ECF4FA);
+$color-stroke: #D3E0EB;
+$color-stroke-light: #EBF3FA;
+$color-stroke-subtle: #EEF6FF;
+$color-stroke-on-dark: #5D6F80;
+$color-icon-stroke-on-dark: #283C50;
+
+$color-error: #B3261E;
+$color-error-10: rgba(#B3261E, .1);
+$color-error-container: #852221;
+
+
+/* viewports */
+$viewport-desktop-large: 1920;
+$viewport-desktop: 1440;
+$viewport-desktop-sm: 1280;
+$viewport-tablet-md: 1024;
+$viewport-tablet: 768;
+$viewport-phone: 375;
+
+$view: 1440;
+
+$content-large: 1320;
+$content: 1200;
+$content-small: 1008;
+
+$margin: 120;
+$margin-medium: 80;
+$margin-small: 60;
+$margin-mobile: 20;

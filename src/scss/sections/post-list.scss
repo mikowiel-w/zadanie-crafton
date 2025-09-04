@@ -1,0 +1,70 @@
+@use '../_variables' as *;
+@use '../_extends' as *;
+@use '../functions' as *;
+
+.post-list {
+    &__container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: #{calc($margin-small/10)}rem;
+
+        @include tablet {
+            gap: #{calc($margin-medium/10)}rem;
+        }
+    }
+
+    &__list {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 3.2rem;
+
+        @include tablet {
+            grid-template-rows: 50.5rem;
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+
+    &__head {
+        text-align: left;
+        align-self: flex-start;
+        max-width: 51.8rem;
+        text-align: center;
+
+        @include tablet {
+            text-align: left;
+        }
+    }
+
+    &__item {
+        display: flex;
+        flex-direction: column;
+        border-radius: 1.2rem;
+        border: .1rem solid $color-stroke;
+        padding: 2.4rem;
+        position: relative;
+
+        .head {
+            margin: 4rem 0 2rem 0;
+        }
+
+        .btn {
+            margin-top: auto;
+            position: relative;
+            bottom: 0;
+        }
+
+        .image {
+            display: flex;
+            overflow: hidden;
+            border-radius: 1.2rem;
+            max-height: 22.2rem;
+            height: 100%;
+        }
+    }
+
+    &__bottom {
+        display: flex;
+        gap: 2rem;
+    }
+}

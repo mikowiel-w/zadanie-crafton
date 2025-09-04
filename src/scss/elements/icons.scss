@@ -1,0 +1,35 @@
+@use '../_variables' as *;
+@use '../_extends' as *;
+@use '../_icons' as *;
+
+.icon {
+    content: '';
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+    background-color: $color-stroke-subtle;
+
+    &--pin {
+        &::before {
+            position: absolute;
+            content: '';
+            width: 3.5rem;
+            height: 3.5rem;
+            border-radius: 50%;
+            z-index: 2;
+            background-color: $color-surface-medium;
+        }
+
+        &::after {
+            content: '';
+            width: 1.4rem;
+            color: $color-primary;
+            z-index: 3;
+            @extend .craft--path;
+        }
+    }
+}
